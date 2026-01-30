@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ultimate Portfolio</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<!-- Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- ✅ NAVBAR -->
+<header class="navbar">
+    <div class="logo">Portfolio.</div>
+
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#services">Services</a>
+        <a href="#skills">Skills</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#contact">Contact</a>
+    </nav>
+</header>
+
+<section>
+   <div class="container">
+      <h1 style="text-align: center; margin-top: 20px;color:aqua;">Welcome to My Portfolio</h1>
+   </div>
+</section>
+
+
+<!-- ✅ HERO -->
+<section class="hero" id="home">
+
+    <div class="hero-text reveal">
+        <h3>Hello, It's Me</h3>
+        <h1 style="color: aqua;" >Tanzeemul Haq</h1>
+
+        <h2>And I'm a <span class="typing" style="color: aqua;"></span></h2>
+
+        <p>Computer Science Engineering student passionate about building futuristic web experiences.</p>
+
+        <div class="socials">
+            <i class="fab fa-linkedin"></i>
+            <i class="fab fa-github"></i>
+            <i class="fab fa-instagram"></i>
+        </div>
+
+        <br><br><a href="asset/resume.pdf" target="_blank" class="btn">
+    Download Resume
+</a>
+
+    </div>
+
+    <div class="hero-img reveal">
+        <img src="images/me2.jpeg" loading="lazy">
+    </div>
+
+</section>
+
+
+<!-- ✅ ABOUT -->
+<section class="about" id="about">
+
+    <div class="about-img reveal-left">
+        <img src="images/WhatsApp Image 2026-01-29 at 12.33.16 PM.jpeg">
+    </div>
+
+    <div class="about-text reveal-right">
+    <h1 style=" margin-top: 20px;color:aqua;">About Me</h1>
+
+    <p>
+        I am a passionate Computer Science student focused on building
+        modern, high-performance web applications.
+    </p>
+
+    <!-- Hidden Detailed Text -->
+    <div class="more-about" id="moreAbout">
+        <p>
+            I specialize in frontend development and love creating
+            futuristic UI designs with smooth user experiences.
+
+            I have participated in multiple hackathons and robotics
+            competitions, winning several awards at university and
+            state level.
+
+            My goal is to become a top software engineer and build
+            products that impact millions of users.
+        </p>
+    </div>
+
+    <button class="btn" onclick="toggleAbout()" id="readBtn">
+        Read More
+    </button>
+    </div>
+
+</section>
+
+
+<!-- ✅ SERVICES -->
+<section class="services" id="services">
+
+<h1 style="text-align: center; margin-top: 20px;color:aqua;">My Services</h1>
+
+<div class="card-container">
+
+    <div class="card reveal">
+        <i class="fa-solid fa-code"></i>
+        <h3>Web Development</h3>
+        <p>Modern responsive websites with clean architecture.</p>
+    </div>
+
+    <div class="card reveal">
+        <i class="fa-solid fa-pen-nib"></i>
+        <h3>Graphic Design</h3>
+        <p>Creative designs that capture attention.</p>
+    </div>
+
+    <div class="card reveal">
+        <i class="fa-solid fa-robot"></i>
+        <h3>Robotics</h3>
+        <p>Engineering smart automation systems.</p>
+    </div>
+
+</div>
+</section>
+
+
+<!-- SKILLS SECTION -->
+<section class="skills" id="skills">
+    <h1 style="text-align: center; margin-top: 20px;color:aqua;">My Skills</h1>
+
+    <div class="skills-container">
+
+        <div class="skill">
+            <div class="skill-info">
+                <span>HTML</span>
+                <span>85%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" data-progress="85"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-info">
+                <span>CSS</span>
+                <span>80%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" data-progress="80"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-info">
+                <span>JavaScript</span>
+                <span>65%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" data-progress="65"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-info">
+                <span>Python</span>
+                <span>80%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" data-progress="80"></div>
+            </div>
+        </div>
+
+        <div class="skill">
+            <div class="skill-info">
+                <span>Robotics</span>
+                <span>95%</span>
+            </div>
+            <div class="skill-bar">
+                <div class="skill-progress" data-progress="95"></div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+
+<!-- ✅ ACHIEVEMENTS -->
+<section class="achievements" id="achievements">
+
+<h1 style="text-align: center; margin-top: 20px;color:aqua;">Achievement</h1>
+
+<div class="achievement-grid">
+
+    <!-- CARD 1 -->
+    <div class="achievement-card">
+        <img src="images/1.jpeg" alt="Achievement">
+
+        <div class="achievement-popup">
+            <h3>MUIT Lucknow</h3>
+            <p>1st in Drone Race</p>
+        </div>
+    </div>
+
+
+    <!-- CARD 2 -->
+    <div class="achievement-card">
+        <img src="images/2.jpeg" alt="Achievement">
+
+        <div class="achievement-popup">
+            <h3>HBTU Kanpur</h3>
+            <p>1st in Robo War</p>
+        </div>
+    </div>
+
+
+    <!-- CARD 3 -->
+    <div class="achievement-card">
+        <img src="images/3.jpeg" alt="Achievement">
+
+        <div class="achievement-popup">
+            <h3>BBD</h3>
+            <p>1st in Tech fest</p>
+        </div>
+    </div>
+
+    <!-- CARD 4 -->
+    <div class="achievement-card">
+        <img src="images/4.jpeg" alt="Achievement">
+
+        <div class="achievement-popup">
+            <h3>AKTU Zonals</h3>
+            <p>Winning the Zonals by copmeting in many Competitions and getting 1st in each</p>
+        </div>
+    </div>
+
+    <!-- CARD 5 -->
+    <div class="achievement-card">
+        <img src="images/6.jpeg" alt="Achievement">
+
+        <div class="achievement-popup">
+            <h3>AKTU States</h3>
+            <p>Winning the States bu competing with different colleges from different states</p>
+        </div>
+    </div>
+
+    <!-- CARD 6 -->
+    <div class="achievement-card">
+        <img src="images/7.jpeg" alt="Achievement">
+
+        <div class="achievement-popup">
+            <h3>TECHNOXIAN</h3>
+            <p>Winning in the Robotics World Cup</p>
+        </div>
+    </div>
+
+</div>
+</section>
+
+
+<!-- ✅ CONTACT -->
+<section class="contact" id="contact">
+
+<h1 style="text-align: center; margin-top: 20px;color:aqua;">Contact Me</h1>
+
+<section class="contact" id="contact">
+
+<h2 class="section-title">Contact Me</h2>
+
+<form action="https://formsubmit.co/tanzeemulhaq033@gmail.com" method="POST">
+
+    <input type="text" name="name" placeholder="Your Name" required>
+
+    <input type="email" name="email" placeholder="Your Email" required>
+
+    <textarea name="message" placeholder="Your Message" required></textarea>
+
+    <button type="submit" class="btn">Send Message</button>
+
+    <input type="hidden" name="_subject" value="New Portfolio Message!">
+    <input type="hidden" name="_captcha" value="false">
+    <input type="text" name="_honey" style="display:none">
+
+</form>
+
+</section>
+
+
+
+<script src="script.js"></script>
+</body>
+</html>
