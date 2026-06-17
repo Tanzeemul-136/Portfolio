@@ -1,303 +1,352 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ultimate Portfolio</title>
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-
-<!-- Icons -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-<link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tanzeemul Haq | Professional Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<!-- ✅ NAVBAR -->
-<header class="navbar">
-    <div class="logo">Portfolio.</div>
-
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#services">Services</a>
-        <a href="#skills">Skills</a>
-        <a href="#achievements">Achievements</a>
-        <a href="#contact">Contact</a>
-    </nav>
-</header>
-
-<section>
-   <div class="container">
-      <h1 style="text-align: center; margin-top: 20px;color:aqua;">Welcome to My Portfolio</h1>
-   </div>
-</section>
-
-
-<!-- ✅ HERO -->
-<section class="hero" id="home">
-
-    <div class="hero-text reveal">
-        <h3>Hello, It's Me</h3>
-        <h1 style="color: aqua;" >Tanzeemul Haq</h1>
-
-        <h2>And I'm a <span class="typing" style="color: aqua;"></span></h2>
-
-        <p>Computer Science Engineering student passionate about building futuristic web experiences.</p>
-
-        <div class="socials">
-            <i class="fab fa-linkedin"></i>
-            <i class="fab fa-github"></i>
-            <i class="fab fa-instagram"></i>
-        </div>
-
-        <br><br><a href="asset/resume.pdf" target="_blank" class="btn">
-    Download Resume
-</a>
-
-    </div>
-
-    <div class="hero-img reveal">
-        <img src="images/me2.jpeg" loading="lazy">
-    </div>
-
-</section>
-
-
-<!-- ✅ ABOUT -->
-<section class="about" id="about">
-
-    <div class="about-img reveal-left">
-        <img src="images/WhatsApp Image 2026-01-29 at 12.33.16 PM.jpeg">
-    </div>
-
-    <div class="about-text reveal-right">
-    <h1 style=" margin-top: 20px;color:aqua;">About Me</h1>
-
-    <p>
-        I am a passionate Computer Science student focused on building
-        modern, high-performance web applications.
-    </p>
-
-    <!-- Hidden Detailed Text -->
-    <div class="more-about" id="moreAbout">
-        <p>
-            I specialize in frontend development and love creating
-            futuristic UI designs with smooth user experiences.
-
-            I have participated in multiple hackathons and robotics
-            competitions, winning several awards at university and
-            state level.
-
-            My goal is to become a top software engineer and build
-            products that impact millions of users.
-        </p>
-    </div>
-
-    <button class="btn" onclick="toggleAbout()" id="readBtn">
-        Read More
-    </button>
-    </div>
-
-</section>
-
-
-<!-- ✅ SERVICES -->
-<section class="services" id="services">
-
-<h1 style="text-align: center; margin-top: 20px;color:aqua;">My Services</h1>
-
-<div class="card-container">
-
-    <div class="card reveal">
-        <i class="fa-solid fa-code"></i>
-        <h3>Web Development</h3>
-        <p>Modern responsive websites with clean architecture.</p>
-    </div>
-
-    <div class="card reveal">
-        <i class="fa-solid fa-pen-nib"></i>
-        <h3>Graphic Design</h3>
-        <p>Creative designs that capture attention.</p>
-    </div>
-
-    <div class="card reveal">
-        <i class="fa-solid fa-robot"></i>
-        <h3>Robotics</h3>
-        <p>Engineering smart automation systems.</p>
-    </div>
-
-</div>
-</section>
-
-
-<!-- SKILLS SECTION -->
-<section class="skills" id="skills">
-    <h1 style="text-align: center; margin-top: 20px;color:aqua;">My Skills</h1>
-
-    <div class="skills-container">
-
-        <div class="skill">
-            <div class="skill-info">
-                <span>HTML</span>
-                <span>85%</span>
+    <div id="terminal-preloader">
+        <canvas id="robotics-canvas"></canvas>
+        
+        <div class="terminal-window">
+            <div class="terminal-header">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+                <span class="terminal-title">tanzeem@srmcem-robotics-desktop:~</span>
             </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-progress="85"></div>
+            <div class="terminal-body" id="terminal-logs">
+                </div>
+        </div>
+    </div>
+
+    <header class="navbar">
+        <div class="logo">TANZEEMUL HAQ</div>
+        <nav class="nav-menu">
+            <a href="#about">About Me</a>
+            <a href="#projects">Projects</a>
+            <a href="#skills">Skills</a>
+            <a href="#training">Training</a>
+            <a href="#achievements">Achievements</a>
+            <a href="#contact">Contact Me</a>
+        </nav>
+        <button id="theme-toggle" class="theme-btn" aria-label="Toggle Theme">
+            <i class="fa-solid fa-moon"></i>
+        </button>
+    </header>
+
+    <section class="hero" id="hero">
+        <div class="hero-container">
+            <div class="hero-text reveal">
+                <h3>Hello World, I'm</h3>
+                <h1>Tanzeemul Haq</h1>
+                <h2>Aspiring Software Engineer & <span class="typing"></span></h2>
+                <p>B.Tech Computer Science & Engineering student at SRMCEM with a strong foundation in building production-grade web systems and intelligent software solutions.</p>
+                <div class="socials">
+                    <a href="https://linkedin.com/in/tanzeemul-h-7034a1326" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://github.com/Tanzeemul-136" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="mailto:tanzeemulhaq033@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+                </div>
+                <br><br>
+                <a href="asset/resume.pdf" target="_blank" class="btn">Download Resume</a>
             </div>
         </div>
+    </section>
 
-        <div class="skill">
-            <div class="skill-info">
-                <span>CSS</span>
-                <span>80%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-progress="80"></div>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="skill-info">
-                <span>JavaScript</span>
-                <span>65%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-progress="65"></div>
-            </div>
-        </div>
-
-        <div class="skill">
-            <div class="skill-info">
-                <span>Python</span>
-                <span>80%</span>
-            </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-progress="80"></div>
+    <section class="about" id="about">
+        <div class="container reveal">
+            <div class="about-flex-layout">
+                <div class="about-text-side">
+                    <h2 class="section-title left-aligned">About Me</h2>
+                    <p>I am a passionate Computer Science student focused on building modern, high-performance web applications. I specialize in frontend development and love creating futuristic UI designs with smooth user experiences.</p>
+                    <p>I have participated in multiple hackathons and robotics competitions, winning several awards at university and state level. My goal is to become a top software engineer and build products that impact millions of users.</p>
+                    
+                    <div class="education-timeline">
+                        <h3>Academic Pathway</h3>
+                        <div class="timeline-item">
+                            <h4>B-Tech (Computer Science & Engineering)</h4>
+                            <p class="meta">SRMCEM | 2023 - 2027</p>
+                            <p class="score">Score: <strong>7.4 CGPA</strong></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-photo-side">
+                    <div class="profile-circle-glow">
+                        <img src="images/me2.jpeg" alt="Tanzeemul Haq Portrait" onerror="this.src='https://via.placeholder.com/300'">
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="skill">
-            <div class="skill-info">
-                <span>Robotics</span>
-                <span>95%</span>
+    <section class="projects-section-container" id="projects">
+        <div class="container">
+            <h2 class="section-title">Featured Projects</h2>
+            <div class="project-grid">
+                <div class="project-card reveal">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fa-solid fa-brain project-icon"></i>
+                            <h3>Emotion AI - Intelligent Human Interaction Assistant</h3>
+                        </div>
+                        <p class="project-tech">Python, HTML, CSS, JavaScript, Computer Vision Concepts, AI/ML Concepts, Git, GitHub</p>
+                        <p class="project-desc">Developed the concept of an AI-powered assistant capable of interpreting facial expressions and hand gestures to generate intelligent voice-based responses.</p>
+                        <span class="project-role">Role: Founder, Product Visionary & Lead UI Developer</span>
+                        <div class="project-action">
+                            <span class="action-hint">Click to launch repository <i class="fa-solid fa-arrow-right-long"></i></span>
+                            <a href="https://github.com/Tanzeemul-136" target="_blank" class="project-link-btn" title="Open Repository">
+                                <i class="fa-brands fa-github"></i> View Project
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card reveal">
+                    <div class="project-content">
+                        <div class="project-header">
+                            <i class="fa-solid fa-route project-icon"></i>
+                            <h3>YATRIK - Smart Travel Planning Application</h3>
+                        </div>
+                        <p class="project-tech">React.js, JavaScript, HTML5, CSS3, Node.js, REST APIs, Git, GitHub</p>
+                        <p class="project-desc">Designed a travel planning platform that enables users to explore destinations and access transportation, hotel, and food booking services through a unified interface.</p>
+                        <span class="project-role">Role: Product Developer & UI Lead</span>
+                        <div class="project-action">
+                            <span class="action-hint">Click to open live deployment <i class="fa-solid fa-arrow-right-long"></i></span>
+                            <a href="https://yatrikui.netlify.app/" target="_blank" class="project-link-btn deployment" title="Open Live Application">
+                                <i class="fa-solid fa-earth-americas"></i> Explore Live <i class="fa-solid fa-up-right-from-square external-indicator-icon"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skill-bar">
-                <div class="skill-progress" data-progress="95"></div>
+        </div>
+    </section>
+
+    <section class="skills" id="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid-resume">
+                <div class="skill-row reveal">
+                    <span class="skill-label">Programming Languages:</span>
+                    <span class="skill-values">Java, Python, JavaScript</span>
+                </div>
+                <div class="skill-row reveal">
+                    <span class="skill-label">Web Technologies:</span>
+                    <span class="skill-values">HTML, CSS, React.js, Node.js, REST APIs, JSON</span>
+                </div>
+                <div class="skill-row reveal">
+                    <span class="skill-label">Databases:</span>
+                    <span class="skill-values">MySQL, MongoDB</span>
+                </div>
+                <div class="skill-row reveal">
+                    <span class="skill-label">Soft Skills:</span>
+                    <span class="skill-values">Attentive, Communication Skill, Team Player, Project Management, Adaptability, Leadership</span>
+                </div>
+                <div class="skill-row reveal">
+                    <span class="skill-label">Platforms:</span>
+                    <span class="skill-values">Git, GitHub, VS Code, LeetCode</span>
+                </div>
             </div>
         </div>
+    </section>
 
-    </div>
-</section>
-
-
-
-<!-- ✅ ACHIEVEMENTS -->
-<section class="achievements" id="achievements">
-
-<h1 style="text-align: center; margin-top: 20px;color:aqua;">Achievement</h1>
-
-<div class="achievement-grid">
-
-    <!-- CARD 1 -->
-    <div class="achievement-card">
-        <img src="images/1.jpeg" alt="Achievement">
-
-        <div class="achievement-popup">
-            <h3>MUIT Lucknow</h3>
-            <p>1st in Drone Race</p>
+    <section class="training" id="training">
+        <div class="container">
+            <h2 class="section-title">Training & Experience</h2>
+            <div class="training-grid">
+                <div class="training-card reveal">
+                    <span class="duration">36 Hours</span>
+                    <h3>Mobile & App Development Program</h3>
+                    <p class="provider">Larsen & Toubro (L&T)</p>
+                    <p class="desc">Completed a structured training program covering application development principles, software development lifecycle methodologies, and modern development practices.</p>
+                </div>
+                <div class="training-card reveal">
+                    <span class="duration">20 Days</span>
+                    <h3>DSA & Aptitude Training Program</h3>
+                    <p class="provider">SRDT</p>
+                    <p class="desc">Participated in an intensive training program focused on Data Structures, Algorithms, Aptitude, Logical Reasoning, and analytical problem-solving techniques.</p>
+                </div>
+                <div class="training-card reveal">
+                    <span class="duration">Bootcamp</span>
+                    <h3>Dynamic Programming Camp</h3>
+                    <p class="provider">Certification Program</p>
+                    <p class="desc">Successfully completed specialized training on Dynamic Programming techniques, optimization strategies, and algorithmic problem-solving approaches commonly used in software engineering interviews.</p>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <section class="achievements-section-wrapper" id="achievements">
+        <div class="container">
+            <h2 class="section-title">🏆 Achievements</h2>
+            <div class="project-container">
+                
+                <div class="card reveal interactive-accordion" id="technoxian-card">
+                    <div class="accordion-summary-header">
+                        <div>
+                            <h3>Robotics World Cup (TECHNOXIAN)</h3>
+                            <p class="click-prompt"><i class="fa-solid fa-angles-down animate-bounce"></i> Click card to view roles, images & news report</p>
+                        </div>
+                        <span class="badge-rank">2nd Position</span>
+                    </div>
+                    
+                    <div class="accordion-expanded-details">
+                        <div class="accordion-inner-flex">
+                            <div class="accordion-img-box">
+                                <img src="images/7.jpeg" alt="Technoxian World Cup Celebration" onerror="this.src='https://via.placeholder.com/400x250?text=Technoxian+Award'">
+                            </div>
+                            <div class="accordion-text-box">
+                                <h4>International Robotics World Cup | Noida</h4>
+                                <p><strong>Role:</strong> Core Robotics Team Member & Structural Designer</p>
+                                <p class="story-text"><strong>Critical Thinking Milestone:</strong> Facing an unexpected mechanical component setback under intense time crunches during the international arena qualifiers, our team engineered rapid diagnostics under pressure, successfully deploying stabilizing hardware optimizations right before the final countdown matches to secure our place on the global podium.</p>
+                                
+                                <div class="news-mention-box">
+                                    <p class="news-hint"><i class="fa-solid fa-tv"></i> Featured live on national television broadcast:</p>
+                                    <a href="https://youtu.be/gEu8-6bGX18?t=237" target="_blank" class="news-link-btn" title="Open News Broadcast">
+                                        <i class="fa-brands fa-youtube"></i> Watch GNT News Report [03:57] <i class="fa-solid fa-up-right-from-square"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-    <!-- CARD 2 -->
-    <div class="achievement-card">
-        <img src="images/2.jpeg" alt="Achievement">
+                <div class="card reveal interactive-accordion" id="sih-card">
+                    <div class="accordion-summary-header">
+                        <div>
+                            <h3>Smart India Hackathon (SIH)</h3>
+                            <p class="click-prompt"><i class="fa-solid fa-angles-down animate-bounce"></i> Click card to view project framework & architecture</p>
+                        </div>
+                        <span class="badge-rank gold">Shortlisted</span>
+                    </div>
+                    
+                    <div class="accordion-expanded-details">
+                        <div class="accordion-inner-flex text-only-accordion">
+                            <div class="accordion-text-box">
+                                <h4>College-Level Qualification Round | YATRIK Project</h4>
+                                <p><strong>Role:</strong> Product Visionary, UI Architect & Frontend Engineering Lead</p>
+                                <p class="story-text"><strong>Hackathon Execution & Problem Solving:</strong> Successfully conceptualized and pitched a unified smart ecosystem to target complex coordination inefficiencies inside regional tourism tracking pipelines. Selected for the highly competitive college qualification tier by presenting high-fidelity user flows, smooth responsive layouts, and cross-platform REST service schemas under intense internal presentation review deadlines.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
 
-        <div class="achievement-popup">
-            <h3>HBTU Kanpur</h3>
-            <p>1st in Robo War</p>
+            </div>
+
+            <h2 class="section-title secondary-title">📜 Certificates</h2>
+            <div class="certificates-premium-grid">
+                
+                <div class="cert-premium-card reveal">
+                    <div class="cert-img-wrapper">
+                        <img src="images/5.jpeg" alt="Gantavya 2026 Certificate" onerror="this.src='https://via.placeholder.com/400x220?text=Gantavya+2026'">
+                    </div>
+                    <div class="cert-premium-content">
+                        <div class="cert-header-meta">
+                            <h3>Gantavya 2026</h3>
+                            <span class="badge-rank gold">1st Place</span>
+                        </div>
+                        <p class="cert-desc">Secured First Position at the annual technological showcase symposium, outperforming regional competition engineering parameters.</p>
+                    </div>
+                </div>
+
+                <div class="cert-premium-card reveal">
+                    <div class="cert-img-wrapper">
+                        <img src="images/1.jpeg" alt="MUIT Lucknow" onerror="this.src='https://via.placeholder.com/400x220?text=MUIT+Lucknow'">
+                    </div>
+                    <div class="cert-premium-content">
+                        <div class="cert-header-meta">
+                            <h3>MUIT Lucknow</h3>
+                            <span class="badge-rank">Certified Winner</span>
+                        </div>
+                        <p class="cert-desc">Recognized for premier tech performance execution milestones during the regional university technology championship cycles.</p>
+                    </div>
+                </div>
+
+                <div class="cert-premium-card reveal">
+                    <div class="cert-img-wrapper">
+                        <img src="images/2.jpeg" alt="HBTU Kanpur" onerror="this.src='https://via.placeholder.com/400x220?text=HBTU+Kanpur'">
+                    </div>
+                    <div class="cert-premium-content">
+                        <div class="cert-header-meta">
+                            <h3>HBTU Kanpur</h3>
+                            <span class="badge-rank">Robo War Honors</span>
+                        </div>
+                        <p class="cert-desc">Awarded performance recognition for excellent combat platform strategy execution during the competitive technical arena meet.</p>
+                    </div>
+                </div>
+
+                <div class="cert-premium-card reveal">
+                    <div class="cert-img-wrapper">
+                        <img src="images/3.jpeg" alt="BBD Lucknow" onerror="this.src='https://via.placeholder.com/400x220?text=BBD+Lucknow'">
+                    </div>
+                    <div class="cert-premium-content">
+                        <div class="cert-header-meta">
+                            <h3>BBD Lucknow</h3>
+                            <span class="badge-rank">Tech Fest Merit</span>
+                        </div>
+                        <p class="cert-desc">Earned validation honors during institutional engineering design showcases and multi-tiered solution evaluation events.</p>
+                    </div>
+                </div>
+
+                <div class="cert-premium-card reveal">
+                    <div class="cert-img-wrapper">
+                        <img src="images/4.jpeg" alt="AKTU Zonals" onerror="this.src='https://via.placeholder.com/400x220?text=AKTU+Zonals'">
+                    </div>
+                    <div class="cert-premium-content">
+                        <div class="cert-header-meta">
+                            <h3>AKTU Zonals</h3>
+                            <span class="badge-rank">Zonal Champion</span>
+                        </div>
+                        <p class="cert-desc">Achieved top placement scores across successive engineering challenges at the regional university zonal level.</p>
+                    </div>
+                </div>
+
+                <div class="cert-premium-card reveal">
+                    <div class="cert-img-wrapper">
+                        <img src="images/6.jpeg" alt="AKTU States" onerror="this.src='https://via.placeholder.com/400x220?text=AKTU+States'">
+                    </div>
+                    <div class="cert-premium-content">
+                        <div class="cert-header-meta">
+                            <h3>AKTU States</h3>
+                            <span class="badge-rank">State Finalist</span>
+                        </div>
+                        <p class="cert-desc">Competed and earned state honors representing advanced robotics system deployment matrices against top state technical institutes.</p>
+                    </div>
+                </div>
+
+            </div>
         </div>
-    </div>
+    </section>
 
-
-    <!-- CARD 3 -->
-    <div class="achievement-card">
-        <img src="images/3.jpeg" alt="Achievement">
-
-        <div class="achievement-popup">
-            <h3>BBD</h3>
-            <p>1st in Tech fest</p>
+    <section class="contact" id="contact">
+        <div class="container reveal">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p><i class="fa-solid fa-envelope"></i> tanzeemulhaq033@gmail.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> Lucknow, UP, India</p>
+                </div>
+                <form action="https://formsubmit.co/tanzeemulhaq033@gmail.com" method="POST" class="contact-form">
+                    <input type="text" name="name" placeholder="Your Name" required>
+                    <input type="email" name="email" placeholder="Your Email" required>
+                    <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+                    <input type="hidden" name="_subject" value="New Portfolio Message!">
+                    <input type="hidden" name="_captcha" value="false">
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
         </div>
-    </div>
+    </section>
 
-    <!-- CARD 4 -->
-    <div class="achievement-card">
-        <img src="images/4.jpeg" alt="Achievement">
+    <footer class="footer">
+        <p>&copy; 2026 Tanzeemul Haq. Powered by Professional Frontend Dev.</p>
+    </footer>
 
-        <div class="achievement-popup">
-            <h3>AKTU Zonals</h3>
-            <p>Winning the Zonals by copmeting in many Competitions and getting 1st in each</p>
-        </div>
-    </div>
-
-    <!-- CARD 5 -->
-    <div class="achievement-card">
-        <img src="images/6.jpeg" alt="Achievement">
-
-        <div class="achievement-popup">
-            <h3>AKTU States</h3>
-            <p>Winning the States bu competing with different colleges from different states</p>
-        </div>
-    </div>
-
-    <!-- CARD 6 -->
-    <div class="achievement-card">
-        <img src="images/7.jpeg" alt="Achievement">
-
-        <div class="achievement-popup">
-            <h3>TECHNOXIAN</h3>
-            <p>Winning in the Robotics World Cup</p>
-        </div>
-    </div>
-
-</div>
-</section>
-
-
-<!-- ✅ CONTACT -->
-<section class="contact" id="contact">
-
-<h1 style="text-align: center; margin-top: 20px;color:aqua;">Contact Me</h1>
-
-<section class="contact" id="contact">
-
-<h2 class="section-title">Contact Me</h2>
-
-<form action="https://formsubmit.co/tanzeemulhaq033@gmail.com" method="POST">
-
-    <input type="text" name="name" placeholder="Your Name" required>
-
-    <input type="email" name="email" placeholder="Your Email" required>
-
-    <textarea name="message" placeholder="Your Message" required></textarea>
-
-    <button type="submit" class="btn">Send Message</button>
-
-    <input type="hidden" name="_subject" value="New Portfolio Message!">
-    <input type="hidden" name="_captcha" value="false">
-    <input type="text" name="_honey" style="display:none">
-
-</form>
-
-</section>
-
-
-
-<script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
