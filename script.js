@@ -1,6 +1,18 @@
 document.addEventListener("DOMContentLoaded", () => {
     
+    // ==========================================
+    // 0. PRE-LOAD AUDIO EFFECT LAYERS
+    // ==========================================
+    const sndClick = new Audio("audio/click.mp3");
+    const sndExpand = new Audio("audio/expand.mp3");
+
+    // Adjust volumes so they are subtle and professional
+    sndClick.volume = 0.15;
+    sndExpand.volume = 0.25;
+
+    // ==========================================
     // 1. DATA-THEME STATE MACHINE MANAGEMENT
+    // ==========================================
     const themeToggleBtn = document.getElementById("theme-toggle");
     const htmlElement = document.documentElement;
     const themeIcon = themeToggleBtn.querySelector("i");
@@ -10,6 +22,10 @@ document.addEventListener("DOMContentLoaded", () => {
     updateThemeIcon(savedTheme);
 
     themeToggleBtn.addEventListener("click", () => {
+        // Play click sound effect safely
+        sndClick.currentTime = 0; 
+        sndClick.play().catch(err => console.log("Audio play blocked until first interaction."));
+
         const currentTheme = htmlElement.getAttribute("data-theme");
         const newTheme = currentTheme === "dark" ? "light" : "dark";
         
@@ -26,7 +42,9 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
+    // ==========================================
     // 2. HERO COMPONENT TYPING ENGINE
+    // ==========================================
     const phrases = ["Developer", "Programmer", "Tech Enthusiast"];
     let phraseIdx = 0;
     let charIdx = 0;
@@ -61,14 +79,22 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     executeTypingEngine();
 
-    // 3. INTERACTIVE ACCORDION MULTI-CARD CONTROLLER
-    function setupAccordionCard(cardId) {
-        const card = document.getElementById(cardId);
-        if (!card) return;
-
+    // ==========================================
+    // 3. GLOBAL INTERACTIVE ACCORDION CLICK CONTROLLER
+    // ==========================================
+    // Selecting all accordion items dynamically fixes the "nothing happening" bug
+    const accordions = document.querySelectorAll(".interactive-accordion");
+    
+    accordions.forEach(card => {
         card.addEventListener("click", (e) => {
-            if (e.target.closest('.news-link-btn')) return;
+            // Prevent expanding card if user is clicking a direct link inside the card
+            if (e.target.closest('.news-link-btn') || e.target.closest('.project-link-btn')) return;
             
+            // Trigger crisp click sound effect overlay
+            sndClick.currentTime = 0;
+            sndClick.play().catch(err => console.log("Audio blocked by browser parameters."));
+
+            // Toggle expansion state map
             card.classList.toggle("active-expanded");
             
             const promptIcon = card.querySelector(".click-prompt i");
@@ -80,11 +106,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 }
             }
         });
-    }
-    setupAccordionCard("technoxian-card");
-    setupAccordionCard("sih-card");
+    });
 
+    // ==========================================
     // 4. INTERSECTION OBSERVER DETECTOR (SCROLL REVEALS)
+    // ==========================================
     const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach((entry) => {
             if (entry.isIntersecting) {
@@ -98,7 +124,9 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
-// 5. FLUENT ROBOTICS BLUEPRINT DESIGN VECTOR CANVAS & BOOT SEQUENCE ENGINE
+// ==========================================
+// 5. FLUENT ROBOTICS BLUEPRINT DESIGN VECTOR CANVAS
+// ==========================================
 window.addEventListener("load", () => {
     const canvas = document.getElementById("robotics-canvas");
     const preloader = document.getElementById("terminal-preloader");
@@ -107,7 +135,11 @@ window.addEventListener("load", () => {
 
     const ctx = canvas.getContext("2d");
     
-    // Resize parameters mapping responsive window scales fluidly
+    // Play the cinematic expand/ambient sweep sound effect on site launch
+    const sndExpand = new Audio("audio/expand.mp3");
+    sndExpand.volume = 0.30;
+    sndExpand.play().catch(err => console.log("Browser blocked initial boot auto-play sound layer."));
+
     function resizeCanvas() {
         canvas.width = window.innerWidth;
         canvas.height = window.innerHeight;
@@ -115,7 +147,6 @@ window.addEventListener("load", () => {
     resizeCanvas();
     window.addEventListener("resize", resizeCanvas);
 
-    // Vector nodes layout mapping structural parameters of a humanoid torso/head assembly blueprint
     const nodes = [
         { x: 0.5, y: 0.22, label: "HEAD_CPU", r: 8 },      
         { x: 0.5, y: 0.35, label: "NECK_JOINT", r: 5 },    
@@ -130,7 +161,6 @@ window.addEventListener("load", () => {
         { x: 0.56, y: 0.82, label: "CHASSIS_PELVIS_R", r: 6 }
     ];
 
-    // Blueprint structural routing wiring links vectors
     const wiringConnections = [
         [0, 1], [1, 2], [1, 3], [2, 8], [3, 8],
         [2, 4], [3, 5], [4, 6], [5, 7],
@@ -139,14 +169,12 @@ window.addEventListener("load", () => {
 
     let pulseOffset = 0;
 
-    // Fluent render loop drawing the wiring pulses and cybernetic silhouette background
     function drawRoboticsBlueprint() {
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         
         const w = canvas.width;
         const h = canvas.height;
 
-        // Draw structural cyber grid background lines
         ctx.strokeStyle = "rgba(0, 255, 255, 0.03)";
         ctx.lineWidth = 1;
         const gridSize = 40;
@@ -157,7 +185,6 @@ window.addEventListener("load", () => {
             ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke();
         }
 
-        // 1. Draw glowing digital wiring lines
         ctx.lineWidth = 2;
         wiringConnections.forEach(pair => {
             const start = nodes[pair[0]];
@@ -166,11 +193,9 @@ window.addEventListener("load", () => {
             const x1 = start.x * w; const y1 = start.y * h;
             const x2 = end.x * w; const y2 = end.y * h;
 
-            // Translucent structural base connection line link
             ctx.strokeStyle = "rgba(255, 255, 255, 0.08)";
             ctx.beginPath(); ctx.moveTo(x1, y1); ctx.lineTo(x2, y2); ctx.stroke();
 
-            // White glowing pulse wire data overlay lines animation logic
             ctx.strokeStyle = "rgba(255, 255, 255, 0.45)";
             ctx.save();
             ctx.setLineDash([15, 45]);
@@ -179,12 +204,10 @@ window.addEventListener("load", () => {
             ctx.restore();
         });
 
-        // 2. Draw neural configuration nodes points
         nodes.forEach(node => {
             const nx = node.x * w;
             const ny = node.y * h;
 
-            // Outer cyan pulse corona ring glows
             ctx.fillStyle = "rgba(0, 255, 255, 0.06)";
             ctx.beginPath(); ctx.arc(nx, ny, node.r * 2.2, 0, Math.PI * 2); ctx.fill();
 
@@ -195,19 +218,17 @@ window.addEventListener("load", () => {
             ctx.fillStyle = node.label === "CORE_REACTOR" ? "#00ffff" : "#ffffff";
             ctx.beginPath(); ctx.arc(nx, ny, node.r * 0.4, 0, Math.PI * 2); ctx.fill();
 
-            // Tech label text nodes visualization overlay
             ctx.fillStyle = "rgba(148, 163, 184, 0.45)";
             ctx.font = "9px monospace";
             ctx.fillText(node.label, nx + node.r + 8, ny + 3);
         });
 
-        pulseOffset += 1.2; // Fluent animation ticking factor speed rate modifier
+        pulseOffset += 1.2; 
         requestAnimationFrame(drawRoboticsBlueprint);
     }
-    // Fire up canvas blueprint calculations engine loops
     drawRoboticsBlueprint();
 
-    // TERMINAL LOG COMPILING INJECTION LOGIC SEQUENCE
+    // TERMINAL INITIALIZATION OUTPUT ENGINE
     const logSequence = [
         { text: "tanzeemulhaq@srmcem:~$ initializing robotics_core_boot...", type: "log-cmd" },
         { text: "Connecting to local architecture systems... SUCCESS", type: "log-success" },
@@ -234,12 +255,11 @@ window.addEventListener("load", () => {
             logContainer.scrollTop = logContainer.scrollHeight;
             
             currentLogLine++;
-            setTimeout(printLogLine, Math.floor(Math.random() * 150) + 120);
+            setTimeout(printLogLine, Math.floor(Math.random() * 100) + 80); // Enhanced rendering fluidity speed
         } else {
-            // Dismiss loader setup smoothly once queue logs complete printing lifecycle loops
             setTimeout(() => {
                 preloader.classList.add("fade-out");
-            }, 600);
+            }, 500);
         }
     }
     setTimeout(printLogLine, 400);
